@@ -22,28 +22,55 @@ format:
 :::: {.columns}
 
 ::: {.column width="40%"}
-Left column
+![](resources/profile.jpg)
 :::
 
 ::: {.column width="60%"}
 - Former NHS Analyst/Data Scientist
-- Now a trainer on the HSMA programme
-- Pythonista (but I ❤️ R too)
+- MSc Health Data Science @ Exeter
+- Now a HSMA trainer
+- Mainly a Pythonista these days (but I ❤️ R too)
+- Obsessed with Quarto, Streamlit, Simulation, Maps & Dataviz
 :::
 
-[{{< fa brands linkedin >}}]()
+[{{< fa brands linkedin >}} Add Me On LinkedIn](https://www.linkedin.com/in/sammijaderosser/)
 
-[{{< fa brands github >}}]()
+[{{< fa brands github >}} Follow Me On GitHub](https://github.com/Bergam0t)
 
 ::::
 
-## HSMA
+## {.center}
+
+:::: {.columns}
+
+::: {.column width="35%"}
+![](resources/hsma_logo.png)
+:::
+
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%" }
 
 
-[{{< fa globe >}}]()
+```{=html}
+</br>
+```
+::: {.r-fit-text}
+The Health Service Modelling Associates is a 15 month data science and operational research training and mentoring programme.
 
-[{{< fa brands github >}}]()
+Supported by the NIHR PenARC and the NHS Digital Academy, the full programme is provided free of charge to people working in health, social care and policing.
+:::
 
+:::
+
+::::
+
+[{{< fa globe >}} Visit Our Website for Free Training](https://hsma-programme.github.io/hsma_site/)
+
+[{{< fa brands youtube >}} Subscribe to our YouTube Channel](https://www.youtube.com/@hsma)
+
+[{{< fa brands github >}} Follow us on GitHub](https://github.com/hsma-programme)
 
 ## Pathway Simulation: What and Why?
 
@@ -54,14 +81,34 @@ Healthcare tends to be full of queueing problems.
 -
 
 
-## Pathway Simulation: What and Why?
+## Pathway Simulation: What?
 
-- Healthcare systems are full of **resources**
-    - People
-    - Equipment
-    - Rooms, cubicles, beds
+Healthcare systems are full of **resources**
 
-## Pathway Simulation: What and Why?
+::: {.incremental}
+- People 👩🏻‍⚕️ 👩🏿‍⚕️ 👨🏽‍⚕️ 👨🏽‍⚕️ 👩🏾‍⚕️
+- Equipment 🔬🩺
+- Rooms & cubicles 🏥
+- Beds 🛌🏻 🛌🏽 🛌🏿 🛌🏻 🛌🏼 🛌🏽 🛌🏿
+- Treatments 💉 🩹 💊
+- Vehicles 🚑 🚁 🚗
+:::
+
+##
+
+There is **demand** from **entities** in the form of
+
+::: {.incremental}
+- People (in person) 🤒 🤢 🤧
+- People (on the phone) ☎️
+- Test Requests 🩻 🧪
+:::
+
+## Pathway Simulation: Why?
+
+
+
+## Pathway Simulation: Why?
 
 - A system that is coping now might *not* cope
     - all the time
@@ -104,15 +151,20 @@ Healthcare tends to be full of queueing problems.
 :::
 
 
-::: {.column width="30%"}
+::: {.column width="30%" .fragment}
 ### SimPy for DES
+
+- The features of the SimPy package
+- How to write simple simulations with SimPy
+- Multi-step pathways
+- Branching pathways and optional steps
 :::
 
 ::: {.column width="5%"}
 
 :::
 
-::: {.column width="30%"}
+::: {.column width="30%" .fragment}
 ### Advanced Simpy
 
 - Warm-up Periods
@@ -126,11 +178,105 @@ Healthcare tends to be full of queueing problems.
 
 ::::
 
+
+
 ## The Little Book of DES
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](resources/des_cover_image.jpeg)
+:::
+
+::: {.column width="50%"}
+
+:::
+
+::::
+
+[{{< fa globe>}} &nbsp; Click here to view the Little Book of DES](https://hsma-programme.github.io/hsma6_des_book/)
+
+## HSMA Training on web app interfaces with DES {.smaller}
+
+
+## The HSMA Book of Streamlit
+
+:::: {.columns}
+
+::: {.column width="50%"}
+![](resources/streamlit_cover_image.jpeg)
+:::
+
+::: {.column width="50%"}
+
+:::
+
+::::
+
+[{{< fa globe>}} &nbsp; Click here to view the HSMA Book of Streamlit](https://bergam0t.github.io/streamlit_book/)
 
 
 ## The DES Playground
 
 
+## Pathway Visualisation
 
-##
+As part of creating the DES playground, I put together the visualisation you saw in the previous slide.
+
+It really resonated with people at the open day
+
+We know that one of the big limitations of simpy (and other FOSS code-based options) is not being able to produce quick and simple visualisations to show to stakeholders.
+
+
+## The vidigi package
+
+The visualisation is a
+
+
+## Behind the scenes
+
+
+
+## The STARS Framework
+
+![](resources/stars.png)
+
+Reproducibility and reusability of models is crucial.
+
+[STARS](https://github.com/pythonhealthdatascience) is a [UKRI-funded project](https://gtr.ukri.org/projects?ref=MR%2FZ503915%2F1) that is trying to ensure good reproducibility of healthcare simulation models.
+
+## The STARS Framework {.smaller}
+
+```{=html}
+<br/>
+```
+
+:::: {.columns}
+
+:::  {.column width="45%"}
+#### Essential Components
+
+- Open license
+- Dependency management
+- Model created using free and open-source software (FOSS)
+- Minimum documentation
+- Research artefact meta data (ORCID ID + citation information)
+- Remote code repository
+- Open science archive
+:::
+
+:::  {.column width="10%"}
+
+:::
+
+:::  {.column width="45%"}
+#### Optional Components
+
+- Enhanced documentation
+- Documentation hosting
+- Online coding environment
+- Model interface
+- Web app hosting
+:::
+
+::::
