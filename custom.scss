@@ -1,0 +1,39 @@
+/*-- scss:defaults --*/
+
+$body-bg: #303030;
+$body-color: #fff;
+$link-color: #42affa;
+
+/*-- scss:rules --*/
+
+.reveal .slide blockquote {
+  border-left: 3px solid $text-muted;
+  padding-left: 0.5em;
+}
+
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+  margin: 0 0 20px 0;
+  color: #ffffff;
+  line-height: 0.9em;
+  letter-spacing: 0.02em;
+  text-shadow: none;
+  font-family: 'Lexend';
+ }
+
+ .reveal h1 {
+   margin: 0 0 20px 0;
+   color: #ffffff;
+   line-height: 0.9em;
+   letter-spacing: 0.02em;
+   text-shadow: -1px -1px 4px black;
+   font-family: 'Lexend';
+  }
+
+body {
+    font-family: 'Lexend';
+    font-size: 22px;
+}

@@ -1,0 +1,136 @@
+---
+title: "Unleashing the Power of Pathway Simulation"
+author:
+    name: Sammi Rosser
+    affiliation: Health Service Modelling Associates Programme
+format:
+  revealjs:
+    transition: slide
+    background-transition: fade
+    theme: [default, custom.scss]
+    title-slide-attributes:
+        data-background-image: /resources/banner.png
+    include-in-header:
+      - text: |
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><link href='https://fonts.googleapis.com/css?family=Lexend' rel='stylesheet'>
+
+---
+
+
+## About Me
+
+:::: {.columns}
+
+::: {.column width="40%"}
+Left column
+:::
+
+::: {.column width="60%"}
+- Former NHS Analyst/Data Scientist
+- Now a trainer on the HSMA programme
+- Pythonista (but I ❤️ R too)
+:::
+
+[{{< fa brands linkedin >}}]()
+
+[{{< fa brands github >}}]()
+
+::::
+
+## HSMA
+
+
+[{{< fa globe >}}]()
+
+[{{< fa brands github >}}]()
+
+
+## Pathway Simulation: What and Why?
+
+Healthcare tends to be full of queueing problems.
+
+- People attending a walk-in clinic or emergency department
+- People waiting for a series of treatment with a mental health practitioner
+-
+
+
+## Pathway Simulation: What and Why?
+
+- Healthcare systems are full of **resources**
+    - People
+    - Equipment
+    - Rooms, cubicles, beds
+
+## Pathway Simulation: What and Why?
+
+- A system that is coping now might *not* cope
+    - all the time
+    - if demand increases
+    - if resource temporarily decreases
+
+- Changing a healthcare system can be expensive and potentially risky
+
+-
+
+## Example 1: Bladder Cancer Pathway
+
+
+## Example 2: Vaccination Clinic
+
+
+## Example 3: Children's Neurodiversity Assessment Pathway
+
+
+## A Handy Thing to Remember
+
+
+
+## HSMA Training on DES {.smaller}
+
+[{{< fa globe >}} Module Link](https://hsma-programme.github.io/hsma_site/hsma_content/modules/current_module_details/2_des.html)
+
+:::: {.columns}
+
+::: {.column width="30%"}
+### Intro to DES
+
+- What DES is and where it may be useful
+- The key terminology associated with DES (e.g. resources, entities, sinks)
+- How to simplify a real-world pathway modelling problem into a conceptual model
+:::
+
+::: {.column width="5%"}
+
+:::
+
+
+::: {.column width="30%"}
+### SimPy for DES
+:::
+
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="30%"}
+### Advanced Simpy
+
+- Warm-up Periods
+- Priority-based Queuing
+- Resource Unavailability
+- Lognormal Distributions
+- Reneging
+- Balking
+- Jockeying
+:::
+
+::::
+
+## The Little Book of DES
+
+
+## The DES Playground
+
+
+
+##
