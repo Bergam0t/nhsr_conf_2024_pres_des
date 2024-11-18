@@ -221,12 +221,12 @@ A system that is coping now might *not* cope
 
 ## It's All a Simulation
 
-On HSMA, we teach a couple of different techniques for modelling, all of which could be applied to pathways.
+On HSMA, we teach a couple of different modelling techniques.
 
 :::: {.columns}
 
 ::: {.column width="30%" .fragment}
-**System Dynamics**
+### System Dynamics
 
 High-level modelling technique that's often suited to uncovering fundamental issues with pathway or wider healthcare system design
 :::
@@ -236,7 +236,7 @@ High-level modelling technique that's often suited to uncovering fundamental iss
 :::
 
 ::: {.column width="30%" .fragment}
-**Agent-Based Simulation**
+### Agent-Based Simulation
 
 Individual-level modelling that is particularly interested in the impact of individual decisions on pathways and outcomes
 :::
@@ -246,9 +246,9 @@ Individual-level modelling that is particularly interested in the impact of indi
 :::
 
 ::: {.column width="30%" .fragment}
-**Discrete Event Simulation**
+### Discrete Event Simulation
 
-Individual-level modelling focussing on the flow of entities through a pathway and their use of resources, allowing the investigation of capacity, queues and waits
+Individual-level modelling focussing on the flow of entities through a pathway and use of resources, allowing detailed investigation of capacity, queues and waits
 :::
 
 ::::
@@ -272,17 +272,138 @@ Today, I'm going to focus on Discrete Event Simulation (DES)<br/>(but you might 
 
 DES fits our pathway modelling needs in healthcare really well.
 
+There is inherently randomness in our systems!
+
+- People don't turn up at a completely predictable rate
+
+- In some systems, activities don't take a consistent length of time
+    - length of stay can vary
+    - the time for treatment in an emergency department can change
+    - call durations can differ
+
+- The number of contacts someone might have within a pathway may differ
+
+And so on!
+
+
+## Randomness
+
+One of the best things about DES is **controlled randomness**.
+<br/><br/>
+
+:::: {.columns}
+
+::: {.column width="45%" .fragment}
+We can hold the random patterns consistent and **change resource levels or pathway design**
+:::
+
+::: {.column width="10%" }
+
+:::
+
+::: {.column width="45%" .fragment}
+We can hold resources or pathway design consistent and **allow randomness**
+:::
+
+::::
+
+<br/>
+
+:::: {.columns .fragment}
+
+::: {.column width="45%" }
+This allows us to be sure the changes we're testing really are responsible for the differences
+:::
+
+::: {.column width="10%" }
+
+:::
+
+::: {.column width="45%" }
+This allows us to test our system in multiple parallel universes, running it **tens** or even **hundreds** of times!
+:::
+
+::::
+
+
+
+
+## DES is popular!
+
+On the HSMA we've had over 35 projects using DES in some capacity.
+
+A third of the registered projects this year use DES
+
+(as opposed to machine learning, ABS, system dynamics, natural language processing)
+
 ## Example 1: Bladder Cancer Pathway
+
+In this [PenCHORD](https://arc-swp.nihr.ac.uk/research-and-implementation/research-teams/penchord/) project, a DES model of the bladder cancer pathway at Royal Cornwall Hospitals Trust (RCHT) exposed two key system bottlenecks.
+
+1. A delay between patients being referred and receiving their Transurethral Resection of Bladder Tumour (TURBT)
+1. A delay waiting for the nurse specialist to contact the patient to discuss their diagnosis and treatment options
+
+The model was used to support an on-the-spot rewrite of the pathway, resulting in multi-week reductions to waiting times.
+<br/><br/>
+[{{< fa globe >}} Find Out More](https://arc-swp.nihr.ac.uk/research/projects/penchord-streamlining-the-bladder-cancer-pathway-at-rcht/)
 
 
 ## Example 2: Vaccination Clinic
 
+This [HSMA](https://hsma-programme.github.io/hsma_site/) project looked at the design of a COVID-19 vaccination clinic, exploring
 
-## Example 3: Children's Neurodiversity Assessment Pathway
+- queue lengths
+- car park capacity
+- times for each step of the vaccination process
+
+The model identified potential issues with the original proposed plans, and was used to refine the plans to enable a safe but efficient delivery of the vaccinations in North Devon.
+<br/><br/>
+[{{< fa globe >}} Find Out More](https://hsma-programme.github.io/hsma_site/previous_projects/hsma_3/h3_generic_vaccination/)
+
+## Example 3: Emergency Department Model
+
+This [HSMA](https://hsma-programme.github.io/hsma_site/) project looked at ways to improve Urgent Treatment Care (UTC) performance. The Emergency Department (ED) team wanted to know
+
+1. What further staff and resources would be required for any variations in patient attendance
+2. How changes in the patient pathway would reduce bottlenecks (e.g what would be the impact of front-loading diagnostics?)
+
+The DES model developed made it easy to understand the impact of changes and what would be most cost-effective. The ED was redesigned based on the model, which had identified a need for additional rooms.
+<br/><br/>
+[{{< fa globe >}} Find Out More](https://hsma-programme.github.io/hsma_site/previous_projects/hsma_3/h3_generic_vaccination/)
 
 
-## A Handy Thing to Remember
+## Example 4: Mental Health Assessment Pathway Model
 
+In this [PenCHORD](https://arc-swp.nihr.ac.uk/research-and-implementation/research-teams/penchord/) project, a simulation model of a mental health assessment pathway was created.
+
+At the trust, which was piloting an approach that would allow patients to book their appointments themselves, the model was used to help
+
+- predict the number of appointment slots required at each site
+- show that allowing queue-sharing between smaller groups of sites would significantly reduce the wait times
+
+[{{< fa globe >}} Find Out More](https://arc-swp.nihr.ac.uk/publications/scheduling-community-mental-health-assessment-in-devon/)
+
+
+## Example 5: Children's Neurodiversity Assessment Pathway
+
+This [HSMA](https://hsma-programme.github.io/hsma_site/) project created a model of a paediatric neurodevelopmental (ADHD + autism) pathway. Waits had increased to a 2 years on average.
+
+The team wanted to understand
+
+- where current bottlenecks in the process were
+- what level of staffing would be needed to clear the existing backlog and maintain a steady state
+
+The model showed that recruiting an extra lead clinician would not address the bottleneck - but an additional second assessor would.
+
+[{{< fa globe >}} Find Out More](https://hsma-programme.github.io/hsma_site/previous_projects/hsma_4/h4_des_adhd_autism_pathway/)
+
+
+
+## Other Projects
+
+You can find details about all of our previous and current Discrete Event Simulation projects
+
+[{{< fa globe >}} on the HSMA website](https://hsma-programme.github.io/hsma_site/previous_projects/projects_by_methods.html#discrete-event-simulation)
 
 ## Getting Started
 
@@ -339,10 +460,11 @@ But HSMA has used and taught [simpy](https://simpy.readthedocs.io/en/latest/) fo
 ::::{.columns}
 
 :::{.column width=60%}
-![](resources/simmer-hex-01.svg)
+![](resources/simmer-hex-01.svg){height=500px}
 :::
 
 :::{.column width=40%}
+<br/><br/>
 R has the [simmer](https://r-simmer.org/) package.
 :::
 
@@ -414,6 +536,9 @@ R has the [simmer](https://r-simmer.org/) package.
 
 ## HSMA Training on web app interfaces with DES {.smaller}
 
+While creating these models and running a range of parameters yourself can be really powerful, getting the models into the hands of stakeholders can really enhance their adoption.
+
+Frameworks like Streamlit can help you to quickly create interactive web app front-ends for your app.
 
 ## The HSMA Book of Streamlit
 
@@ -439,6 +564,7 @@ The book walks you through a range of Streamlit concepts, as well as providing a
 ![](assets/2024-11-18-09-26-40.png)
 
 ## The DES Playground
+
 
 
 ## Pathway Visualisation
