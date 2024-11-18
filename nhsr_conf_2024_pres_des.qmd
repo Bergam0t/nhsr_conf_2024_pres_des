@@ -89,9 +89,42 @@ Supported by the NIHR PenARC and the NHS Digital Academy, the full programme is 
 
 # Part 1: Pathways
 
+## Pathway Simulation: Why?
+
+:::: {.columns}
+
+:::{.column width="40%"}
+![](resources/long_hospital_queue.jpeg){height=400px}
+:::
+
+:::{.column width="60%"}
+Your emergency department is struggling.
+
+You could try a range of different things...
+
+::: {.incremental}
+- increase the number of staff available to register, triage or treat
+- increase the number of rooms or beds
+- increase the rate at which tests can be processed
+
+:::
+
+:::
+
+::::
+
+:::{.incremental}
+- add a new step in the process with a different kind of practitioner
+- completely redesign the pathway
+:::
+
+:::{.fragment .center}
+**Which of these is the right answer?**
+:::
+
 ## Queue, Queue, Barney McGrew
 
-Healthcare tends to be **full** of queueing problems.
+Healthcare tends to be **full** of queueing problems like this one.
 
 ::: {.incremental}
 - People attending a walk-in clinic or emergency department
@@ -102,13 +135,70 @@ Healthcare tends to be **full** of queueing problems.
     - might have one, several or many appointments
 :::
 
+## Pathway Parts
+
+::::{.columns}
+
+:::{.column width=50%}
+
+
+Healthcare systems are full of **resources**
+
+::: {.incremental}
+- People 👩🏻‍⚕️ 👩🏿‍⚕️ 👨🏽‍⚕️ 👨🏽‍⚕️ 👩🏾‍⚕️
+- Equipment 🔬🩺
+- Rooms & cubicles 🏥
+- Beds 🛌🏻 🛌🏽 🛌🏿 🛌🏻 🛌🏼 🛌🏽 🛌🏿
+- Treatments 💉 🩹 💊
+- Vehicles 🚑 🚁 🚗
+:::
+
+:::
+
+:::{.column width=50%}
+
+::: {.fragment}
+
+These **resources** experience demand from **entities**.
+
+These entities might be
+
+:::
+
+::: {.incremental}
+- People (in person) 🤒 🤢 🤧
+- People (on the phone) ☎️
+- Test Requests 🩻 🧪
+:::
+
+:::
+
+::::
+
+## Pathways and Queues
+
+::::{.columns}
+
+:::{.column width=23%}
+As these entities move through a pathway - a series of steps where these resources are used - queues can build up where there isn't enough resource.
+:::
+
+:::{.column width=7%}
+:::
+
+:::{.column width=70%}
+![](assets/2024-11-18-10-12-15.png)
+:::
+
+::::
+
 ## Queue What?
 
 ```{=html}
 <br/>
 ```
 
-These queues are **complicated**!
+And these pathways are often very **complicated**!
 
 There are lots of moving parts, and lots of variation.
 
@@ -127,7 +217,7 @@ There are lots of moving parts, and lots of variation.
 :::
 
 ::: {.column width="30%" .fragment}
-**Variation in how long something takes to do**
+**Variation in how long an activity in the pathway takes**
 :::
 
 ::: {.column width="5%" }
@@ -141,75 +231,20 @@ There are lots of moving parts, and lots of variation.
 
 ::::
 
-## Very Resourceful
 
-Healthcare systems are full of **resources**
+## Pathway Simulation Benefits
 
-::: {.incremental}
-- People 👩🏻‍⚕️ 👩🏿‍⚕️ 👨🏽‍⚕️ 👨🏽‍⚕️ 👩🏾‍⚕️
-- Equipment 🔬🩺
-- Rooms & cubicles 🏥
-- Beds 🛌🏻 🛌🏽 🛌🏿 🛌🏻 🛌🏼 🛌🏽 🛌🏿
-- Treatments 💉 🩹 💊
-- Vehicles 🚑 🚁 🚗
-:::
-
-## So Demanding
-
-There is **demand** from **entities** in the form of
-
-::: {.incremental}
-- People (in person) 🤒 🤢 🤧
-- People (on the phone) ☎️
-- Test Requests 🩻 🧪
-:::
-
-## Pathway Simulation: Why?
-
-:::: {.columns}
-
-:::{.column width="35%"}
-![](resources/long_hospital_queue.jpeg){height=350px}
-:::
-
-:::{.column width="65%"}
-Your emergency department is struggling.
-
-You could try a range of different things...
-
-::: {.incremental}
-- increase the number of staff available to register, triage or treat
-- increase the number of rooms or beds
-:::
-
-:::
-
-::::
-
-:::{.incremental}
-- increase the rate at which tests can be processed
-- add a new step in the process with a different kind of practitioner
-- completely redesign of the pathway
-:::
-
-:::{.fragment .center}
-**Which of these is the right answer?**
-:::
-
-## Pathway Simulation: Why?
-
-Finding out which of these is a good option can be
+Making changes to pathways can be
 
 - costly
 - slow
 - unsafe!
 
-
 :::{.fragment}
-And even if you do fix the original problem, there's a risk of knock-on effects elsewhere in the pathway that you didn't foresee.
+And even if you do fix the original problem you were trying to solve, there's a risk of knock-on effects elsewhere in the pathway that you didn't foresee.
 :::
 
-## Pathway Simulation: Why?
+## Exploring Variation with Pathway Simulation
 
 And even if you avoid that....
 
@@ -224,14 +259,14 @@ A system that is coping now might *not* cope
 
 ## It's All a Simulation
 
-On HSMA, we teach a couple of different modelling techniques.
+On HSMA, we teach a couple of different modelling and simulation techniques.
 
 :::: {.columns}
 
-::: {.column width="30%" .fragment}
+::: {.column width="27%" .fragment}
 ### System Dynamics
 
-High-level modelling technique that's often suited to uncovering fundamental issues with pathway or wider healthcare system design
+High-level technique that's often suited to uncovering fundamental issues with pathway or wider healthcare system design
 :::
 
 ::: {.column width="5%" .fragment}
@@ -239,19 +274,19 @@ High-level modelling technique that's often suited to uncovering fundamental iss
 :::
 
 ::: {.column width="30%" .fragment}
-### Agent-Based Simulation
+### Agent-Based Simulation (ABS)
 
-Individual-level modelling that is particularly interested in the impact of individual decisions on pathways and outcomes
+Individual-level modelling that is particularly interested in the impact of individuals' decisions and interactions
 :::
 
 ::: {.column width="5%" .fragment}
 <div style="border-left:3px solid #fff;height:500px"></div>
 :::
 
-::: {.column width="30%" .fragment}
-### Discrete Event Simulation
+::: {.column width="33%" .fragment}
+### Discrete Event Simulation (DES)
 
-Individual-level modelling focussing on the flow of entities through a pathway and use of resources, allowing detailed investigation of capacity, queues and waits
+Modelling focussing on the flow of entities through a pathway and use of resources, allowing detailed investigation of capacity, queues and waits
 :::
 
 ::::
@@ -260,24 +295,38 @@ Individual-level modelling focussing on the flow of entities through a pathway a
 
 :::
 
-## Discrete Event Simulation Nation
+## It's Our DEStiny
 
-Today, I'm going to focus on Discrete Event Simulation (DES)<br/>(but you might want to look up more about the others too!)
+::::{.columns}
 
-## What is DES?
+:::{.column width=25%}
+
+What we want to tackle our queuing problems in healthcare is **Discrete Event Simulation (DES)**<br/>
+
+:::
+
+
+:::{.column width=5%}
+:::
+
+:::{.column width=70%}
+
+::: {.center}
+
+In a DES...
+:::
+
 ![](assets/2024-11-18-09-41-27.png)
+:::
 
-##
+::::
 
-![](assets/2024-11-18-10-12-15.png)
+## Randomness in Simulations
 
-## Why DES?
+There is inherently randomness in our healthcare systems that DES can also cope really well with.
 
-DES fits our pathway modelling needs in healthcare really well.
-
-There is inherently randomness in our systems!
-
-- People don't turn up at a completely predictable rate
+:::{.incremental}
+- People (entities) don't turn up at a completely predictable rate
 
 - In some systems, activities don't take a consistent length of time
     - length of stay can vary
@@ -285,9 +334,11 @@ There is inherently randomness in our systems!
     - call durations can differ
 
 - The number of contacts someone might have within a pathway may differ
+:::
 
+:::{.fragment}
 And so on!
-
+:::
 
 ## Randomness
 
@@ -301,7 +352,7 @@ We can hold the random patterns consistent and **change resource levels or pathw
 :::
 
 ::: {.column width="10%" }
-
+<div style="border-left:3px solid #fff;height:250px"></div>
 :::
 
 ::: {.column width="45%" .fragment}
@@ -319,6 +370,7 @@ This allows us to be sure the changes we're testing really are responsible for t
 :::
 
 ::: {.column width="10%" }
+<div style="border-left:3px solid #fff;height:250px"></div>
 
 :::
 
