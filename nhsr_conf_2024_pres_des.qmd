@@ -39,7 +39,7 @@ pio.renderers.default = "plotly_mimetype+notebook_connected"
 ::: {.column width="60%"}
 - Former NHS Analyst/Data Scientist
 - MSc Health Data Science @ Exeter
-- Now a HSMA trainer
+- Now a HSMA trainer @ Exeter ([PenCHORD](https://arc-swp.nihr.ac.uk/research-and-implementation/research-teams/penchord/)/[PenARC](https://arc-swp.nihr.ac.uk/))
 - Mainly a Pythonista these days<br/>(but I ❤️ R too)
 - Obsessed with Quarto, Streamlit, Simulation, Maps & Dataviz
 :::
@@ -50,42 +50,37 @@ pio.renderers.default = "plotly_mimetype+notebook_connected"
 
 ::::
 
-## About HSMA {.center}
+## {#about-hsma data-menu-title="About HSMA"}
 
 :::: {.columns}
 
-::: {.column width="40%"}
+::: {.column width="35%"}
 ![](resources/hsma_logo.png)
-:::
 
-::: {.column width="10%"}
-:::
-
-::: {.column width="50%" }
-
-
-```{=html}
-</br>
-```
-::: {.r-fit-text}
-The Health Service Modelling Associates is a 15 month data science and operational research training and mentoring programme.
-
-Supported by the NIHR PenARC and the NHS Digital Academy, the full programme is provided **free of charge** to people working in health, social care and policing and is accredited by AphA.
-```{=html}
-</br>
-```
 ![](resources/nihr_logo.png)
-:::
 
 :::
 
-::::
+::: {.column width="5%"}
+:::
+
+::: {.column width="60%" }
+
+The Health Service Modelling Associates is a 15 month data science and operational research training and mentoring programme.
+</br></br>
+Supported by the NIHR PenARC and the NHS Digital Academy, the full programme is provided **free of charge** to people working in health, social care and policing and is accredited by AphA.
+</br></br>
 
 [{{< fa globe >}} Visit Our Website for Free Training](https://hsma-programme.github.io/hsma_site/)
 
 [{{< fa brands youtube >}} Subscribe to our YouTube Channel](https://www.youtube.com/@hsma)
 
 [{{< fa brands github >}} Follow us on GitHub](https://github.com/hsma-programme)
+:::
+
+
+::::
+
 
 # Part 1: Pathways
 
@@ -94,10 +89,13 @@ Supported by the NIHR PenARC and the NHS Digital Academy, the full programme is 
 :::: {.columns}
 
 :::{.column width="40%"}
+
 ![](resources/long_hospital_queue.jpeg){height=400px}
+
 :::
 
 :::{.column width="60%"}
+
 Your emergency department is struggling.
 
 You could try a range of different things...
@@ -141,7 +139,6 @@ Healthcare tends to be **full** of queueing problems like this one.
 
 :::{.column width=50%}
 
-
 Healthcare systems are full of **resources**
 
 ::: {.incremental}
@@ -176,6 +173,7 @@ These entities might be
 ::::
 
 ## Pathways and Queues
+
 
 ::::{.columns}
 
@@ -232,7 +230,7 @@ There are lots of moving parts, and lots of variation.
 ::::
 
 
-## Pathway Simulation Benefits
+## The Problem with Pathways
 
 Making changes to pathways can be
 
@@ -244,7 +242,7 @@ Making changes to pathways can be
 And even if you do fix the original problem you were trying to solve, there's a risk of knock-on effects elsewhere in the pathway that you didn't foresee.
 :::
 
-## Exploring Variation with Pathway Simulation
+## The Future Problems with Pathways
 
 And even if you avoid that....
 
@@ -259,54 +257,75 @@ A system that is coping now might *not* cope
 
 ## It's All a Simulation
 
-On HSMA, we teach a couple of different modelling and simulation techniques.
+
+On HSMA, we teach a couple of different **computer simulation** techniques.
 
 :::: {.columns}
 
 ::: {.column width="27%" .fragment}
+
 ### System Dynamics
 
 High-level technique that's often suited to uncovering fundamental issues with pathway or wider healthcare system design
+
 :::
 
 ::: {.column width="5%" .fragment}
-<div style="border-left:3px solid #fff;height:500px"></div>
+
+```{=html}
+<div style="border-left:3px solid #fff;height:600px"></div>
+```
+
 :::
 
+
 ::: {.column width="30%" .fragment}
+
 ### Agent-Based Simulation (ABS)
 
 Individual-level modelling that is particularly interested in the impact of individuals' decisions and interactions
+
 :::
 
-::: {.column width="5%" .fragment}
-<div style="border-left:3px solid #fff;height:500px"></div>
+
+::: {.column width='5%' .fragment}
+
+```{=html}
+<div style="border-left:3px solid #fff;height:600px">
+</div>
+```
+
 :::
+
+
 
 ::: {.column width="33%" .fragment}
+
 ### Discrete Event Simulation (DES)
 
 Modelling focussing on the flow of entities through a pathway and use of resources, allowing detailed investigation of capacity, queues and waits
+
 :::
 
 ::::
 
-::: {.fragment}
 
-:::
 
 ## It's Our DEStiny
 
 ::::{.columns}
 
 :::{.column width=25%}
-
-What we want to tackle our queuing problems in healthcare is **Discrete Event Simulation (DES)**<br/>
+</br></br>
+What we generally want to tackle our pathway problems in healthcare is **Discrete Event Simulation (DES)**<br/>
 
 :::
 
 
 :::{.column width=5%}
+```{=html}
+<div style="border-left:3px solid #fff;height:700px"></div>
+```
 :::
 
 :::{.column width=70%}
@@ -321,84 +340,163 @@ In a DES...
 
 ::::
 
-## Randomness in Simulations
+## DES to the Rescue
 
-There is inherently randomness in our healthcare systems that DES can also cope really well with.
+DES is so powerful because it gives us an in-silico (computer-based) reproduction of our pathway to play around with.
+<br/><br/>
+We can make any change we want<br/>*(e.g. more resources, higher demand, new pathway design)*<br/>**safely and for free** and see what impact it has on any metric we care to measure:
 
-:::{.incremental}
-- People (entities) don't turn up at a completely predictable rate
-
-- In some systems, activities don't take a consistent length of time
-    - length of stay can vary
-    - the time for treatment in an emergency department can change
-    - call durations can differ
-
-- The number of contacts someone might have within a pathway may differ
-:::
-
-:::{.fragment}
+- how long people wait at each step of the pathway
+- people meeting targets (e.g. 4 hour wait)
+- how much of the time the resources are utilised for
+```{=html}
+<br/><br/>
+```
 And so on!
-:::
 
 ## Randomness
 
-One of the best things about DES is **controlled randomness**.
-<br/><br/>
+That randomness in our healthcare systems that we mentioned before? DES can cope really well with that!
 
-:::: {.columns}
+```{=html}
+<br/>
+```
 
-::: {.column width="45%" .fragment}
+
+:::: {.columns  .fragment}
+
+::: {.column width="45%"}
+
 We can hold the random patterns consistent and **change resource levels or pathway design**
+
 :::
 
 ::: {.column width="10%" }
+
+```{=html}
 <div style="border-left:3px solid #fff;height:250px"></div>
+```
+
 :::
 
-::: {.column width="45%" .fragment}
+::: {.column width="45%" }
+
 We can hold resources or pathway design consistent and **allow randomness**
+
 :::
 
 ::::
 
+
+```{=html}
 <br/>
+```
+
+
 
 :::: {.columns .fragment}
 
 ::: {.column width="45%" }
+
 This allows us to be sure the changes we're testing really are responsible for the differences
+
 :::
 
 ::: {.column width="10%" }
+
+```{=html}
 <div style="border-left:3px solid #fff;height:250px"></div>
+```
 
 :::
 
 ::: {.column width="45%" }
+
 This allows us to test our system in multiple parallel universes, running it **tens** or even **hundreds** of times!
+
 :::
 
 ::::
 
 
+## Exploring Impacts
+
+In our models, we can then summarise the performance of a given set of parameters across multiple runs.
+
+![](assets/2024-11-18-18-52-06.png)
+
+## Digging Into Results
+
+We can start to explore the variation in performance across runs too.
+
+![](assets/2024-11-18-18-52-30.png)
+
+## Comparing Performance
+
+And we can provide visualiations to compare the impact of changing parameters - here, for example, adding one extra stabilisation bay.
+
+![](assets/2024-11-18-18-54-56.png)
+
+
+## A Note About Modelling
+
+Your DES won't be a perfect one-to-one reproduction of the pathway you are modelling.
+
+We have to make certain assumptions and simplifications, and we can't capture every complexity.
+
+
+::::{.columns}
+
+
+:::{.column width=45%}
+
+
+However...
+
+<br/><br/>
+
+
+> All models are wrong, but some are useful
+
+• George E. P. Box
+
+:::
+
+
+:::{.column width=10%}
+
+:::
+
+
+:::{.column width=45%}
+
+![](assets/box_pixel.jpeg){height=450px}
+
+:::
+
+
+::::
+
+
+
 # Example DES Projects
+
 
 ## DES is popular!
 
-On the HSMA we've had over 35 projects using DES in some capacity.
-
-A third of the registered projects this year use DES
-
-(as opposed to machine learning, ABS, system dynamics, natural language processing)
-
-It's also frequently used in the PenCHORD team.
+- On the HSMA programme, we've had over 35 projects using DES in some capacity
+<br/><br/>
+- A third of the registered projects this year use DES
+(as opposed to machine learning, ABS, system dynamics, natural language processing, geographical modelling)
+<br/><br/>
+- It's also frequently used in the [PenCHORD](https://arc-swp.nihr.ac.uk/research-and-implementation/research-teams/penchord/) team
 
 ## Example 1: Bladder Cancer Pathway
 
 In this [PenCHORD](https://arc-swp.nihr.ac.uk/research-and-implementation/research-teams/penchord/) project, a DES model of the bladder cancer pathway at Royal Cornwall Hospitals Trust (RCHT) exposed two key system bottlenecks.
 
-1. A delay between patients being referred and receiving their Transurethral Resection of Bladder Tumour (TURBT)
-1. A delay waiting for the nurse specialist to contact the patient to discuss their diagnosis and treatment options
+- A delay between patients being referred and receiving their surgery
+- A delay waiting for the nurse specialist to contact the patient to discuss their diagnosis and treatment options
 
 The model was used to support an on-the-spot rewrite of the pathway, resulting in multi-week reductions to waiting times.
 <br/><br/>
@@ -407,33 +505,35 @@ The model was used to support an on-the-spot rewrite of the pathway, resulting i
 
 ## Example 2: Vaccination Clinic
 
-This [HSMA](https://hsma-programme.github.io/hsma_site/) project looked at the design of a COVID-19 vaccination clinic, exploring
+This [HSMA](https://hsma-programme.github.io/hsma_site/) project looked at the design of a COVID-19 vaccination clinic in North Devon, exploring
 
 - queue lengths
 - car park capacity
 - times for each step of the vaccination process
 
-The model identified potential issues with the original proposed plans, and was used to refine the plans to enable a safe but efficient delivery of the vaccinations in North Devon.
+The model identified potential issues with the original proposed plans, and was used to refine the plans to enable a safe but efficient delivery of the vaccination programme.
 <br/><br/>
 [{{< fa globe >}} Find Out More](https://hsma-programme.github.io/hsma_site/previous_projects/hsma_3/h3_generic_vaccination/)
 
 ## Example 3: Emergency Department Model
 
-This [HSMA](https://hsma-programme.github.io/hsma_site/) project looked at ways to improve Urgent Treatment Care (UTC) performance. The Emergency Department (ED) team wanted to know
+This [HSMA](https://hsma-programme.github.io/hsma_site/) project looked at ways to improve Urgent Treatment Care (UTC) performance. The team wanted to know
 
-1. What further staff and resources would be required for any variations in patient attendance
-2. How changes in the patient pathway would reduce bottlenecks (e.g what would be the impact of front-loading diagnostics?)
+- What further staff and resources would be required for any variations in patient attendance
+- How changes in the patient pathway would reduce bottlenecks</br> (e.g what would be the impact of front-loading diagnostics?)
 
-The DES model developed made it easy to understand the impact of changes and what would be most cost-effective. The ED was redesigned based on the model, which had identified a need for additional rooms.
+The model identified a need for additional rooms and the ED was redesigned as a result.
 <br/><br/>
 [{{< fa globe >}} Find Out More](https://hsma-programme.github.io/hsma_site/previous_projects/hsma_3/h3_generic_vaccination/)
 
 
 ## Example 4: Mental Health Assessment Pathway Model
 
-In this [PenCHORD](https://arc-swp.nihr.ac.uk/research-and-implementation/research-teams/penchord/) project, a simulation model of a mental health assessment pathway was created.
+This [PenCHORD](https://arc-swp.nihr.ac.uk/research-and-implementation/research-teams/penchord/) project created a simulation model of a mental health assessment pathway.
 
-At the trust, which was piloting an approach that would allow patients to book their appointments themselves, the model was used to help
+The trust in question was piloting an approach that would allow patients to book their appointments themselves.
+
+The model was used to help
 
 - predict the number of appointment slots required at each site
 - show that allowing queue-sharing between smaller groups of sites would significantly reduce the wait times
@@ -454,185 +554,18 @@ The model showed that recruiting an extra lead clinician would not address the b
 
 [{{< fa globe >}} Find Out More](https://hsma-programme.github.io/hsma_site/previous_projects/hsma_4/h4_des_adhd_autism_pathway/)
 
+
 ## Other Projects
 
-You can find details about all of our previous and current Discrete Event Simulation projects
+You can find details about all of our previous and current Discrete Event Simulation projects [{{< fa globe >}} on the HSMA website](https://hsma-programme.github.io/hsma_site/previous_projects/projects_by_methods.html#discrete-event-simulation)
 
-[{{< fa globe >}} on the HSMA website](https://hsma-programme.github.io/hsma_site/previous_projects/projects_by_methods.html#discrete-event-simulation)
+![](assets/cfN8dkSYNB.gif)
 
 # Doing your Own DES Projects
 
-## Drag & Drop
-
-There ar various paid, closed-source drag-and-drop software tools for doing DES (but we won't talk about them here).
-
-If you don't code, there is the free and open source (FOSS) tool [JaamSim](https://jaamsim.com/).
-
-![](assets/2024-11-18-10-15-22.png)
-
-
-## DES in R
-
-::::{.columns}
-
-:::{.column width=60%}
-![](resources/simmer-hex-01.svg){height=500px}
-:::
-
-:::{.column width=40%}
-<br/><br/>
-R has the [simmer](https://r-simmer.org/) package.
-:::
-
-::::
-
-## DES in Python
-
-In Python, there are a range of packages for DES.
-
-::::{.columns}
-
-:::{.column width=40%}
-![](assets/2024-11-18-10-19-04.png)
-:::
-
-:::{.column width=60%}
-[Salabim](https://github.com/salabim/salabim) is quite popular.
-:::
-
-::::
-
-::::{.columns}
-
-:::{.column width=40%}
-![](assets/2024-11-18-10-16-14.png)
-:::
-
-:::{.column width=60%}
-I've also heard good things about [ciw](https://github.com/CiwPython/Ciw)
-:::
-
-::::
-
-::::{.columns}
-
-:::{.column width=40%}
-![](assets/2024-11-18-10-17-01.png)
-:::
-
-:::{.column width=60%}
-But HSMA has used and taught [simpy](https://simpy.readthedocs.io/en/latest/) for several years. It's mature, stable, reliable and flexible.
-:::
-
-::::
-
-
-## HSMA Training on DES {.smaller}
-
-[{{< fa globe >}} Module Link](https://hsma-programme.github.io/hsma_site/hsma_content/modules/current_module_details/2_des.html)
-
-:::: {.columns}
-
-::: {.column width="30%"}
-### Intro to DES
-
-- What DES is and where it may be useful
-- The key terminology associated with DES (e.g. resources, entities, sinks)
-- How to simplify a real-world pathway modelling problem into a conceptual model
-:::
-
-::: {.column width="5%"}
-
-:::
-
-
-::: {.column width="30%" .fragment}
-### SimPy for DES
-
-- The features of the SimPy package
-- How to write simple simulations with SimPy
-- Multi-step pathways
-- Branching pathways and optional steps
-:::
-
-::: {.column width="5%"}
-
-:::
-
-::: {.column width="30%" .fragment}
-### Advanced Simpy
-
-- Warm-up Periods
-- Priority-based Queuing
-- Resource Unavailability
-- Lognormal Distributions
-- Reneging
-- Balking
-- Jockeying
-:::
-
-::::
-
-
-
-## The Little Book of DES
-
-:::: {.columns}
-
-::: {.column width="50%"}
-![](resources/des_cover_image.jpeg)
-:::
-
-::: {.column width="50%"}
-This free eBook serves as a handy reference to doing DES with simpy and is packed with code snippets you can use and modify.
-:::
-
-::::
-
-[{{< fa globe>}} &nbsp; Click here to view the Little Book of DES](https://hsma-programme.github.io/hsma6_des_book/)
-
-## HSMA Training on Web App Interfaces for DES {.smaller}
-
-::::{.columns}
-
-:::{.column width=23%}
-While creating these models and running a range of parameters yourself can be really powerful, getting the models into the hands of stakeholders can really enhance their adoption.
-<br/><br/>
-Frameworks like [Streamlit](https://streamlit.io/) can help you to quickly create interactive web app front-ends for your app.
-:::
-
-:::{.column width=3%}
-:::
-
-:::{.column width=74%}
-![](assets/chrome_CdAZUpS295.gif)
-:::
-
-::::
-
-## The HSMA Book of Streamlit
-
-
-:::: {.columns}
-
-::: {.column width="50%"}
-![](resources/streamlit_cover_image.jpeg)
-:::
-
-::: {.column width="50%"}
-This free eBook walks you through a range of Streamlit concepts.
-<br/><br/>
-It then goes on to providing a walk-through of how to create a simple front-end for any DES and deploying that on a free online hosting platform.
-:::
-
-::::
-
-[{{< fa globe>}} &nbsp; Click here to view the HSMA Book of Streamlit](https://bergam0t.github.io/streamlit_book/)
-
-
 ## The DES Playground
 
-This site was designed to help teach the key concepts of discrete event simulation to non-technical beginners.
+This site was designed to help teach the **key concepts** of discrete event simulation to non-technical beginners.
 
 ::::{.columns}
 
@@ -645,32 +578,253 @@ This site was designed to help teach the key concepts of discrete event simulati
 :::{.column width="20%"}
 
 [{{< fa globe>}} &nbsp; Click here to visit!](https://hsma-programme.github.io/Teaching_DES_Concepts_Streamlit)
+
 <br/><br/>
 
-:::{.callout-warning}
 Note that this won't work on Firefox.
 
 It uses browser-based Python, so calculations can be slow on mobile devices!
-:::
+
 
 :::
 
 ::::
 
+
+
+## Drag & Drop
+
+There are various paid, closed-source drag-and-drop software tools for doing DES (but we won't talk about them here).
+
+If you don't code, there is the free and open source (FOSS) tool [JaamSim](https://jaamsim.com/).
+
+![](assets/2024-11-18-10-15-22.png)
+
+
+## DES in R
+
+::::{.columns}
+
+:::{.column width=60%}
+
+![](resources/simmer-hex-01.svg){height=500px}
+
+:::
+
+
+:::{.column width=40%}
+
+<br/><br/>
+
+R has the [simmer](https://r-simmer.org/) package.
+
+:::
+
+::::
+
+
+
+## DES in Python
+
+In Python, there are a range of packages for DES.
+
+::::{.columns}
+
+:::{.column width=40%}
+
+![](assets/2024-11-18-10-19-04.png)
+
+:::
+
+:::{.column width=60%}
+
+[Salabim](https://github.com/salabim/salabim) is quite popular.
+
+:::
+
+::::
+
+::::{.columns}
+
+:::{.column width=40%}
+
+![](assets/2024-11-18-10-16-14.png)
+
+:::
+
+:::{.column width=60%}
+
+I've also heard good things about [ciw](https://github.com/CiwPython/Ciw)
+
+:::
+
+::::
+
+::::{.columns}
+
+:::{.column width=40%}
+
+![](assets/2024-11-18-10-17-01.png)
+
+:::
+
+:::{.column width=60%}
+
+But HSMA has used and taught [simpy](https://simpy.readthedocs.io/en/latest/) for several years. It's mature, stable, reliable and flexible.
+
+:::
+
+::::
+
+
+## HSMA Training on DES {.smaller}
+
+The DES lectures and activities from this year's HSMA can be found on our website.
+
+[{{< fa globe >}} Module Link](https://hsma-programme.github.io/hsma_site/hsma_content/modules/current_module_details/2_des.html)
+
+
+:::: {.columns}
+
+::: {.column width="30%"}
+
+### Intro to DES
+
+• What DES is and where it may be useful
+• The key terminology associated with DES e.g. resources, entities, sinks
+• How to simplify a real-world pathway modelling problem into a conceptual model
+
+:::
+
+
+::: {.column width="5%"}
+
+:::
+
+
+::: {.column width="30%" .fragment}
+
+### SimPy for DES
+
+• The features of the SimPy package
+• How to write simple simulations with SimPy
+• Multi-step pathways
+• Branching pathways and optional steps
+
+:::
+
+::: {.column width="5%"}
+
+:::
+
+::: {.column width="30%" .fragment}
+
+### Advanced Simpy
+
+• Warm-up Periods
+• Priority-based Queuing
+• Resource Unavailability
+• Lognormal Distributions
+• Reneging
+• Balking
+• Jockeying
+
+:::
+
+::::
+
+## The Little Book of DES
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](resources/des_cover_image.jpeg)
+
+[{{< fa globe>}} &nbsp; Click here to view the eBook](https://hsma-programme.github.io/hsma6_des_book/)
+
+:::
+
+::: {.column width="50%"}
+
+We have also put together a **free eBook** that serves as a handy reference to doing DES with SimPy.
+
+It's packed with code snippets you can use and modify and goes beyond the lecture content, including
+
+• appointment-based models
+• reproducibility
+• parallelisation
+• and more!
+
+:::
+
+::::
+
+
+## HSMA Training on Web App Interfaces for DES {.smaller}
+
+::::{.columns}
+
+:::{.column width=23%}
+
+While creating these models and running a range of parameters yourself can be really powerful, getting the models into the hands of stakeholders can really enhance their adoption.
+<br/><br/>
+Frameworks like [Streamlit](https://streamlit.io/) can help you to quickly create interactive web app front-ends for your app.
+
+:::
+
+:::{.column width=3%}
+
+:::
+
+:::{.column width=74%}
+
+![](assets/chrome_CdAZUpS295.gif)
+
+:::
+
+::::
+
+
+## The HSMA Book of Streamlit
+
+
+:::: {.columns}
+
+::: {.column width="50%"}
+
+![](resources/streamlit_cover_image.jpeg)
+
+:::
+
+::: {.column width="50%"}
+
+This free eBook walks you through a range of Streamlit concepts.
+<br/><br/>
+It then goes on to providing a walk-through of how to create a simple front-end for any DES and deploying that on a free online hosting platform.
+
+:::
+
+::::
+
+[{{< fa globe>}} &nbsp; Click here to view the eBook](https://bergam0t.github.io/streamlit_book/)
+
+
+
 ## Pathway Visualisation
 
 As part of creating the DES playground, I put together the visualisation you saw in the previous slide.
-
+<br/><br/>
 It really resonated with people - so we wanted to make more use of it!
-
-We know that one of the big limitations of simpy (and other FOSS code-based options) is not being able to produce quick and simple visualisations to show to stakeholders.
+<br/><br/>
+We know that one of the big limitations of simpy (and other FOSS code-based options) is not being able to produce **quick and simple** visualisations to show to stakeholders.
 
 
 ## The vidigi package
 
-The [**vidigi**]() package is designed to be a flexible library for creating these animated visualisations for **any** simulation.
+The [**vidigi**](https://pypi.org/project/vidigi/) package is designed to be a flexible library for creating these animated visualisations for **any** simulation.
 
-Under the hood, it makes use of plotly's animated scatterplots.
+Under the hood, it makes use of [Plotly's](https://plotly.com/python/) animated scatterplots.
 
 However, it adds a range of additional helper functions to
 
@@ -678,14 +832,24 @@ However, it adds a range of additional helper functions to
 - lay out the animation
 - add icons for resources and entities
 
+It's hosted on PyPI - so you can `pip install` it!
+
+
+```{python}
+#| echo: true
+#| eval: false
+#| code-line-numbers: false
+pip install vidigi
+```
+
 ## Moving from this...
 
 ```{python}
 #| output: false
+#| eval: false
 from examples.example_2_branching_multistep.ex_2_model_classes import Trial, g, event_position_df
 from vidigi.animation import animate_activity_log
 import pandas as pd
-
 
 g.arrival_df = "examples/example_2_branching_multistep/ed_arrivals.csv"
 
@@ -694,6 +858,7 @@ result = my_trial.run_trial()
 ```
 
 ```{python}
+#| eval: false
 fig = animate_activity_log(
         event_log=my_trial.all_event_logs[my_trial.all_event_logs['run']==1],
         event_position_df=event_position_df,
@@ -719,11 +884,17 @@ fig = animate_activity_log(
     )
 
 fig.show()
+
+# Due to inability to autoplay above, embedding as gif
+
 ```
+
+![](assets/firefox_mrlo2ZZy2D.gif)
 
 ## ... to this
 
 ```{python}
+#| eval: false
 fig = animate_activity_log(
         event_log=my_trial.all_event_logs[my_trial.all_event_logs['run']==1],
         event_position_df=event_position_df,
@@ -748,11 +919,15 @@ fig = animate_activity_log(
     )
 
 fig.show()
+
+# Due to inability to autoplay above, embedding as gif
 ```
+
+![](assets/firefox_WQjMAS0YvL.gif)
 
 ## Simulation Library
 
-:::{.callout-warning}
+:::{.callout-warning appearance="minimal"}
 This is an early-stage piece of work!
 :::
 
@@ -824,5 +999,7 @@ They are also creating examples in Python and R, as well as creating open-source
 ## Summary
 
 - DES is an amazing option for tackling your pathway problems
-- With ever-growing awareness and resources, it's a great time to get started
+<br/><br/>
+- With ever-growing resources and community experience out there, it's a great time to get started
+<br/><br/>
 - FOSS libraries allow us to adapt and reuse models - but follow guidance to make it as easy as possible for people to stand on your shoulders!
