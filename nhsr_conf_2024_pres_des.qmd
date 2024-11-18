@@ -326,7 +326,7 @@ This allows us to test our system in multiple parallel universes, running it **t
 ::::
 
 
-
+# Example DES Projects
 
 ## DES is popular!
 
@@ -335,6 +335,8 @@ On the HSMA we've had over 35 projects using DES in some capacity.
 A third of the registered projects this year use DES
 
 (as opposed to machine learning, ABS, system dynamics, natural language processing)
+
+It's also frequently used in the PenCHORD team.
 
 ## Example 1: Bladder Cancer Pathway
 
@@ -397,21 +399,19 @@ The model showed that recruiting an extra lead clinician would not address the b
 
 [{{< fa globe >}} Find Out More](https://hsma-programme.github.io/hsma_site/previous_projects/hsma_4/h4_des_adhd_autism_pathway/)
 
-
-
 ## Other Projects
 
 You can find details about all of our previous and current Discrete Event Simulation projects
 
 [{{< fa globe >}} on the HSMA website](https://hsma-programme.github.io/hsma_site/previous_projects/projects_by_methods.html#discrete-event-simulation)
 
-## Getting Started
+# Doing your Own DES Projects
 
-There are paid, closed-source software tools for doing DES (but we won't talk about them here).
+## Drag & Drop
 
-## Drag & Drop: JaamSim
+There ar various paid, closed-source drag-and-drop software tools for doing DES (but we won't talk about them here).
 
-If you don't code, there is the free and open source (FOSS) tool JaamSim.
+If you don't code, there is the free and open source (FOSS) tool [JaamSim](https://jaamsim.com/).
 
 ![](assets/2024-11-18-10-15-22.png)
 
@@ -534,13 +534,27 @@ R has the [simmer](https://r-simmer.org/) package.
 
 [{{< fa globe>}} &nbsp; Click here to view the Little Book of DES](https://hsma-programme.github.io/hsma6_des_book/)
 
-## HSMA Training on web app interfaces with DES {.smaller}
+## HSMA Training on Web App Interfaces for DES {.smaller}
 
+::::{.columns}
+
+:::{.column width=23%}
 While creating these models and running a range of parameters yourself can be really powerful, getting the models into the hands of stakeholders can really enhance their adoption.
+<br/><br/>
+Frameworks like [Streamlit](https://streamlit.io/) can help you to quickly create interactive web app front-ends for your app.
+:::
 
-Frameworks like Streamlit can help you to quickly create interactive web app front-ends for your app.
+:::{.column width=3%}
+:::
+
+:::{.column width=74%}
+![](assets/chrome_CdAZUpS295.gif)
+:::
+
+::::
 
 ## The HSMA Book of Streamlit
+
 
 :::: {.columns}
 
@@ -549,19 +563,15 @@ Frameworks like Streamlit can help you to quickly create interactive web app fro
 :::
 
 ::: {.column width="50%"}
-
+This free eBook walks you through a range of Streamlit concepts.
+<br/><br/>
+It then goes on to providing a walk-through of how to create a simple front-end for any DES and deploying that on a free online hosting platform.
 :::
 
 ::::
 
 [{{< fa globe>}} &nbsp; Click here to view the HSMA Book of Streamlit](https://bergam0t.github.io/streamlit_book/)
 
-
-## The HSMA Book of Streamlit
-
-The book walks you through a range of Streamlit concepts, as well as providing a walk-through of how to create a simple front-end for any DES.
-
-![](assets/2024-11-18-09-26-40.png)
 
 ## The DES Playground
 
@@ -716,4 +726,9 @@ This is a [UKRI-funded project](https://gtr.ukri.org/projects?ref=MR%2FZ503915%2
 ::::
 
 
+# End of Simulation
+
 ## Summary
+
+- DES is an amazing option for tackling your pathway problems
+- It's a great time to start modelling!
