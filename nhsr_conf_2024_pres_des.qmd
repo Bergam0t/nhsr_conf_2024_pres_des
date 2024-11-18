@@ -744,7 +744,7 @@ fig = animate_activity_log(
         limit_duration=g.sim_duration,
         time_display_units="dhm",
         display_stage_labels=False,
-        add_background_image="examples/example_2_branching_multistep/Full Model Background Image - Horizontal Layout.drawio.png",
+        add_background_image="https://raw.githubusercontent.com/Bergam0t/nhsr_conf_2024_pres_des/refs/heads/main/examples/example_2_branching_multistep/Full%20Model%20Background%20Image%20-%20Horizontal%20Layout.drawio.png",
     )
 
 fig.show()
@@ -824,4 +824,5 @@ They are also creating examples in Python and R, as well as creating open-source
 ## Summary
 
 - DES is an amazing option for tackling your pathway problems
-- It's a great time to start modelling!
+- With ever-growing awareness and resources, it's a great time to get started
+- FOSS libraries allow us to adapt and reuse models - but follow guidance to make it as easy as possible for people to stand on your shoulders!
