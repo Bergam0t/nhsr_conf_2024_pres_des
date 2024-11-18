@@ -25,5 +25,5 @@ dependencies:
         - seaborn>=0.13.0
         - quarto==0.1.0
         - jupyter==1.1.1
-        - sim-tools=0.6.1
-        - vidigi=0.0.3
+        - sim-tools==0.6.1
+        - vidigi==0.0.3

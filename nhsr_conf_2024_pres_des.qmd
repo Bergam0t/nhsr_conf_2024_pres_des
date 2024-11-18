@@ -6,6 +6,8 @@ author:
 format:
   revealjs:
     view-distance: 100
+    height: 800
+    width: 1250
     transition: slide
     plotly-connected: true
     background-transition: fade
@@ -18,15 +20,14 @@ format:
 
 ---
 
-
-## Test
+## About Me
 
 ```{python}
+#| output: false
+import plotly
 import plotly.io as pio
 pio.renderers.default = "plotly_mimetype+notebook_connected"
 ```
-
-## About Me
 
 :::: {.columns}
 
@@ -38,7 +39,7 @@ pio.renderers.default = "plotly_mimetype+notebook_connected"
 - Former NHS Analyst/Data Scientist
 - MSc Health Data Science @ Exeter
 - Now a HSMA trainer
-- Mainly a Pythonista these days (but I ❤️ R too)
+- Mainly a Pythonista these days<br/>(but I ❤️ R too)
 - Obsessed with Quarto, Streamlit, Simulation, Maps & Dataviz
 :::
 
@@ -137,7 +138,7 @@ There are lots of moving parts, and lots of variation.
 
 ::::
 
-## Pathway Simulation: What?
+## Very Resourceful
 
 Healthcare systems are full of **resources**
 
@@ -150,7 +151,7 @@ Healthcare systems are full of **resources**
 - Vehicles 🚑 🚁 🚗
 :::
 
-##
+## So Demanding
 
 There is **demand** from **entities** in the form of
 
@@ -162,18 +163,114 @@ There is **demand** from **entities** in the form of
 
 ## Pathway Simulation: Why?
 
+:::: {.columns}
 
+:::{.column width="35%"}
+![](resources/long_hospital_queue.jpeg){height=350px}
+:::
+
+:::{.column width="65%"}
+Your emergency department is struggling.
+
+You could try a range of different things...
+
+::: {.incremental}
+- increase the number of staff available to register, triage or treat
+- increase the number of rooms or beds
+:::
+
+:::
+
+::::
+
+:::{.incremental}
+- increase the rate at which tests can be processed
+- add a new step in the process with a different kind of practitioner
+- completely redesign of the pathway
+:::
+
+:::{.fragment .center}
+**Which of these is the right answer?**
+:::
 
 ## Pathway Simulation: Why?
 
-- A system that is coping now might *not* cope
-    - all the time
-    - if demand increases
-    - if resource temporarily decreases
+Finding out which of these is a good option can be
 
-- Changing a healthcare system can be expensive and potentially risky
+- costly
+- slow
+- unsafe!
 
--
+
+:::{.fragment}
+And even if you do fix the original problem, there's a risk of knock-on effects elsewhere in the pathway that you didn't foresee.
+:::
+
+## Pathway Simulation: Why?
+
+And even if you avoid that....
+
+A system that is coping now might *not* cope
+
+:::{.incremental}
+- all the time
+- if demand increases
+- if resource temporarily decreases
+:::
+
+
+## It's All a Simulation
+
+On HSMA, we teach a couple of different techniques for modelling, all of which could be applied to pathways.
+
+:::: {.columns}
+
+::: {.column width="30%" .fragment}
+**System Dynamics**
+
+High-level modelling technique that's often suited to uncovering fundamental issues with pathway or wider healthcare system design
+:::
+
+::: {.column width="5%" .fragment}
+<div style="border-left:3px solid #fff;height:500px"></div>
+:::
+
+::: {.column width="30%" .fragment}
+**Agent-Based Simulation**
+
+Individual-level modelling that is particularly interested in the impact of individual decisions on pathways and outcomes
+:::
+
+::: {.column width="5%" .fragment}
+<div style="border-left:3px solid #fff;height:500px"></div>
+:::
+
+::: {.column width="30%" .fragment}
+**Discrete Event Simulation**
+
+Individual-level modelling focussing on the flow of entities through a pathway and their use of resources, allowing the investigation of capacity, queues and waits
+:::
+
+::::
+
+::: {.fragment}
+
+:::
+
+## Discrete Event Simulation Nation
+
+Today, I'm going to focus on Discrete Event Simulation (DES)<br/>(but you might want to look up more about the others too!)
+
+## What is DES?
+![](assets/2024-11-18-09-41-27.png)
+
+##
+
+![](assets/2024-11-18-10-12-15.png)
+
+## Why DES?
+
+DES fits our pathway modelling needs in healthcare really well.
 
 ## Example 1: Bladder Cancer Pathway
 
@@ -187,6 +284,69 @@ There is **demand** from **entities** in the form of
 ## A Handy Thing to Remember
 
 
+## Getting Started
+
+There are paid, closed-source software tools for doing DES (but we won't talk about them here).
+
+## Drag & Drop: JaamSim
+
+If you don't code, there is the free and open source (FOSS) tool JaamSim.
+
+![](assets/2024-11-18-10-15-22.png)
+
+## DES in Python
+
+In Python, there are a range of packages for DES.
+
+::::{.columns}
+
+:::{.column width=40%}
+![](assets/2024-11-18-10-19-04.png)
+:::
+
+:::{.column width=60%}
+[Salabim](https://github.com/salabim/salabim) is quite popular.
+:::
+
+::::
+
+::::{.columns}
+
+:::{.column width=40%}
+![](assets/2024-11-18-10-16-14.png)
+:::
+
+:::{.column width=60%}
+I've also heard good things about [ciw](https://github.com/CiwPython/Ciw)
+:::
+
+::::
+
+::::{.columns}
+
+:::{.column width=40%}
+![](assets/2024-11-18-10-17-01.png)
+:::
+
+:::{.column width=60%}
+But HSMA has used and taught [simpy](https://simpy.readthedocs.io/en/latest/) for several years. It's mature, stable, reliable and flexible.
+:::
+
+::::
+
+## DES in R
+
+::::{.columns}
+
+:::{.column width=60%}
+![](resources/simmer-hex-01.svg)
+:::
+
+:::{.column width=40%}
+R has the [simmer](https://r-simmer.org/) package.
+:::
+
+::::
 
 ## HSMA Training on DES {.smaller}
 
@@ -272,6 +432,12 @@ There is **demand** from **entities** in the form of
 [{{< fa globe>}} &nbsp; Click here to view the HSMA Book of Streamlit](https://bergam0t.github.io/streamlit_book/)
 
 
+## The HSMA Book of Streamlit
+
+The book walks you through a range of Streamlit concepts, as well as providing a walk-through of how to create a simple front-end for any DES.
+
+![](assets/2024-11-18-09-26-40.png)
+
 ## The DES Playground
 
 
@@ -286,10 +452,14 @@ We know that one of the big limitations of simpy (and other FOSS code-based opti
 
 ## The vidigi package
 
-The visualisation
+The [**vidigi**]() package is designed to be a flexible library for creating these animated visualisations for **any** simulation.
 
+Under the hood, it makes use of plotly's animated scatterplots.
 
-
+However, it adds a range of additional helper functions to
+- process event logs into the format required
+- lay out the animation
+- add icons for resources and entities
 
 ## Moving from this...
 
@@ -360,10 +530,15 @@ fig = animate_activity_log(
         add_background_image="examples/example_2_branching_multistep/Full Model Background Image - Horizontal Layout.drawio.png",
     )
 
-fig.show()
+fig.write_html("full_plot.html", auto_play=True)
 ```
 
-## Behind the scenes
+```{=html}
+
+```
+
+## Simulation Library
+
 
 
 
@@ -374,7 +549,9 @@ fig.show()
 
 Reproducibility and reusability of models is crucial.
 
-[STARS](https://github.com/pythonhealthdatascience) is a [UKRI-funded project](https://gtr.ukri.org/projects?ref=MR%2FZ503915%2F1) that is trying to ensure good reproducibility of healthcare simulation models.
+I want to take a moment to highlight [STARS](https://github.com/pythonhealthdatascience)
+
+This is a [UKRI-funded project](https://gtr.ukri.org/projects?ref=MR%2FZ503915%2F1) that is trying to ensure good reproducibility of healthcare simulation models.
 
 ## The STARS Framework {.smaller}
 
@@ -411,3 +588,6 @@ Reproducibility and reusability of models is crucial.
 :::
 
 ::::
+
+
+## Summary
