@@ -49,7 +49,7 @@ pio.renderers.default = "plotly_mimetype+notebook_connected"
 
 ::::
 
-## {.center}
+## About HSMA {.center}
 
 :::: {.columns}
 
@@ -85,6 +85,8 @@ Supported by the NIHR PenARC and the NHS Digital Academy, the full programme is 
 [{{< fa brands youtube >}} Subscribe to our YouTube Channel](https://www.youtube.com/@hsma)
 
 [{{< fa brands github >}} Follow us on GitHub](https://github.com/hsma-programme)
+
+# Part 1: Pathways
 
 ## Queue, Queue, Barney McGrew
 
@@ -415,6 +417,22 @@ If you don't code, there is the free and open source (FOSS) tool [JaamSim](https
 
 ![](assets/2024-11-18-10-15-22.png)
 
+
+## DES in R
+
+::::{.columns}
+
+:::{.column width=60%}
+![](resources/simmer-hex-01.svg){height=500px}
+:::
+
+:::{.column width=40%}
+<br/><br/>
+R has the [simmer](https://r-simmer.org/) package.
+:::
+
+::::
+
 ## DES in Python
 
 In Python, there are a range of packages for DES.
@@ -455,20 +473,6 @@ But HSMA has used and taught [simpy](https://simpy.readthedocs.io/en/latest/) fo
 
 ::::
 
-## DES in R
-
-::::{.columns}
-
-:::{.column width=60%}
-![](resources/simmer-hex-01.svg){height=500px}
-:::
-
-:::{.column width=40%}
-<br/><br/>
-R has the [simmer](https://r-simmer.org/) package.
-:::
-
-::::
 
 ## HSMA Training on DES {.smaller}
 
@@ -527,7 +531,7 @@ R has the [simmer](https://r-simmer.org/) package.
 :::
 
 ::: {.column width="50%"}
-
+This free eBook serves as a handy reference to doing DES with simpy and is packed with code snippets you can use and modify.
 :::
 
 ::::
@@ -575,13 +579,36 @@ It then goes on to providing a walk-through of how to create a simple front-end 
 
 ## The DES Playground
 
+This site was designed to help teach the key concepts of discrete event simulation to non-technical beginners.
 
+::::{.columns}
+
+:::{.column width="80%"}
+
+![](assets/chrome_2RNEIsSXoP.gif)
+
+:::
+
+:::{.column width="20%"}
+
+[{{< fa globe>}} &nbsp; Click here to visit!](https://hsma-programme.github.io/Teaching_DES_Concepts_Streamlit)
+<br/><br/>
+
+:::{.callout-warning}
+Note that this won't work on Firefox.
+
+It uses browser-based Python, so calculations can be slow on mobile devices!
+:::
+
+:::
+
+::::
 
 ## Pathway Visualisation
 
 As part of creating the DES playground, I put together the visualisation you saw in the previous slide.
 
-It really resonated with people at the open day
+It really resonated with people - so we wanted to make more use of it!
 
 We know that one of the big limitations of simpy (and other FOSS code-based options) is not being able to produce quick and simple visualisations to show to stakeholders.
 
@@ -593,6 +620,7 @@ The [**vidigi**]() package is designed to be a flexible library for creating the
 Under the hood, it makes use of plotly's animated scatterplots.
 
 However, it adds a range of additional helper functions to
+
 - process event logs into the format required
 - lay out the animation
 - add icons for resources and entities
@@ -627,7 +655,7 @@ fig = animate_activity_log(
         plotly_width=950,
         override_x_max=700,
         override_y_max=675,
-        icon_and_text_size=24,
+        icon_and_text_size=12,
         wrap_queues_at=10,
         step_snapshot_max=50,
         limit_duration=g.sim_duration,
@@ -666,20 +694,30 @@ fig = animate_activity_log(
         add_background_image="examples/example_2_branching_multistep/Full Model Background Image - Horizontal Layout.drawio.png",
     )
 
-fig.write_html("full_plot.html", auto_play=True)
-```
-
-```{=html}
-
+fig.show()
 ```
 
 ## Simulation Library
 
+:::{.callout-warning}
+This is an early-stage piece of work!
+:::
+
+To go along with vidigi, I'm working on collating and visualising models from across healthcare systems.
+
+At present, there is
+
+- A simple emergency department
+- An orthopaedic surgery unit
+- A simple community-based service with a single appointment
+- A complex community-based service with varying numbers of appointments and a per-clinician caseload
+
+[{{< fa brands github>}} &nbsp; Click here for the code repository](https://github.com/hsma-programme/simpy_visualisation/tree/main/examples)
+
+[{{< fa globe>}} &nbsp; Click here to try them out](https://simpy-visualisation.streamlit.app/)
 
 
-
-
-## The STARS Framework
+## Model Reproducibility
 
 ![](resources/stars.png)
 
@@ -688,6 +726,8 @@ Reproducibility and reusability of models is crucial.
 I want to take a moment to highlight [STARS](https://github.com/pythonhealthdatascience)
 
 This is a [UKRI-funded project](https://gtr.ukri.org/projects?ref=MR%2FZ503915%2F1) that is trying to ensure good reproducibility of healthcare simulation models.
+
+They are also creating examples in Python and R, as well as creating open-source versions of closed-source models from published scientific papers.
 
 ## The STARS Framework {.smaller}
 
