@@ -5,7 +5,9 @@ author:
     affiliation: Health Service Modelling Associates Programme
 format:
   revealjs:
+    view-distance: 100
     transition: slide
+    plotly-connected: true
     background-transition: fade
     theme: [default, custom.scss]
     title-slide-attributes:
@@ -16,6 +18,13 @@ format:
 
 ---
 
+
+## Test
+
+```{python}
+import plotly.io as pio
+pio.renderers.default = "plotly_mimetype+notebook_connected"
+```
 
 ## About Me
 
@@ -43,14 +52,14 @@ format:
 
 :::: {.columns}
 
-::: {.column width="35%"}
+::: {.column width="40%"}
 ![](resources/hsma_logo.png)
 :::
 
-::: {.column width="5%"}
+::: {.column width="10%"}
 :::
 
-::: {.column width="60%" }
+::: {.column width="50%" }
 
 
 ```{=html}
@@ -59,7 +68,11 @@ format:
 ::: {.r-fit-text}
 The Health Service Modelling Associates is a 15 month data science and operational research training and mentoring programme.
 
-Supported by the NIHR PenARC and the NHS Digital Academy, the full programme is provided free of charge to people working in health, social care and policing.
+Supported by the NIHR PenARC and the NHS Digital Academy, the full programme is provided **free of charge** to people working in health, social care and policing and is accredited by AphA.
+```{=html}
+</br>
+```
+![](resources/nihr_logo.png)
 :::
 
 :::
@@ -72,14 +85,57 @@ Supported by the NIHR PenARC and the NHS Digital Academy, the full programme is 
 
 [{{< fa brands github >}} Follow us on GitHub](https://github.com/hsma-programme)
 
-## Pathway Simulation: What and Why?
+## Queue, Queue, Barney McGrew
 
-Healthcare tends to be full of queueing problems.
+Healthcare tends to be **full** of queueing problems.
 
+::: {.incremental}
 - People attending a walk-in clinic or emergency department
+- People calling a telephone-based service like 111 or a mental health crisis line
+- People on a cancer diagnosis and treatment pathway
+- People waiting to be assessed for ADHD and Autism, or on the waiting list for a gender clinic
 - People waiting for a series of treatment with a mental health practitioner
--
+    - might have one, several or many appointments
+:::
 
+## Queue What?
+
+```{=html}
+<br/>
+```
+
+These queues are **complicated**!
+
+There are lots of moving parts, and lots of variation.
+
+```{=html}
+<br/>
+```
+
+:::: {.columns}
+
+::: {.column width="30%" .fragment}
+**Variation in when, and how frequently, people arrive**
+:::
+
+::: {.column width="5%" }
+
+:::
+
+::: {.column width="30%" .fragment}
+**Variation in how long something takes to do**
+:::
+
+::: {.column width="5%" }
+
+:::
+
+::: {.column width="30%" .fragment}
+**Variation in the pathways people take within a single system**
+:::
+
+
+::::
 
 ## Pathway Simulation: What?
 
@@ -230,10 +286,85 @@ We know that one of the big limitations of simpy (and other FOSS code-based opti
 
 ## The vidigi package
 
-The visualisation is a
+The visualisation
 
+
+
+
+## Moving from this...
+
+```{python}
+#| output: false
+from examples.example_2_branching_multistep.ex_2_model_classes import Trial, g, event_position_df
+from vidigi.animation import animate_activity_log
+import pandas as pd
+
+
+g.arrival_df = "examples/example_2_branching_multistep/ed_arrivals.csv"
+
+my_trial = Trial()
+result = my_trial.run_trial()
+```
+
+```{python}
+fig = animate_activity_log(
+        event_log=my_trial.all_event_logs[my_trial.all_event_logs['run']==1],
+        event_position_df=event_position_df,
+        scenario=g(),
+        setup_mode=True,
+        debug_mode=False,
+        every_x_time_units=5,
+        include_play_button=True,
+        gap_between_entities=10,
+        gap_between_rows=15,
+        plotly_height=650,
+        plotly_width=950,
+        override_x_max=700,
+        override_y_max=675,
+        icon_and_text_size=24,
+        wrap_queues_at=10,
+        step_snapshot_max=50,
+        limit_duration=g.sim_duration,
+        time_display_units="dhm",
+        display_stage_labels=False,
+        custom_entity_icon_list=["🔴"],
+        custom_resource_icon=""
+    )
+
+fig.show()
+```
+
+## ... to this
+
+```{python}
+fig = animate_activity_log(
+        event_log=my_trial.all_event_logs[my_trial.all_event_logs['run']==1],
+        event_position_df=event_position_df,
+        scenario=g(),
+        setup_mode=False,
+        debug_mode=False,
+        every_x_time_units=5,
+        include_play_button=True,
+        gap_between_entities=10,
+        gap_between_rows=15,
+        plotly_height=650,
+        plotly_width=950,
+        override_x_max=700,
+        override_y_max=675,
+        icon_and_text_size=12,
+        wrap_queues_at=10,
+        step_snapshot_max=50,
+        limit_duration=g.sim_duration,
+        time_display_units="dhm",
+        display_stage_labels=False,
+        add_background_image="examples/example_2_branching_multistep/Full Model Background Image - Horizontal Layout.drawio.png",
+    )
+
+fig.show()
+```
 
 ## Behind the scenes
+
 
 
 

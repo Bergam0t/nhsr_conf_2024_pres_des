@@ -1,5 +1,11 @@
 {
   "nhsr_conf_2024_pres_des.qmd": {
     "nhsr_conf_2024_pres_des.html": "ebecacbe"
+  },
+  "examples/example_1_simplest_case/ex_1_simplest_case.ipynb": {
+    "ex_1_simplest_case.html": "602550e6"
+  },
+  "examples/example_2_branching_multistep/ex_2_branching_multistep_case.ipynb": {
+    "ex_2_branching_multistep_case.html": "430d0f3a"
   }
 }
