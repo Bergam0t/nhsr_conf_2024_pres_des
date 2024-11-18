@@ -5,6 +5,7 @@ author:
     affiliation: Health Service Modelling Associates Programme
 format:
   revealjs:
+    output-file: index.html
     view-distance: 100
     height: 800
     width: 1250

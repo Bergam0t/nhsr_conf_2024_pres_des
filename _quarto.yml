@@ -1,2 +1,3 @@
 project:
   title: "nhsr_conf_2024_pres_des"
+  output-dir: docs
