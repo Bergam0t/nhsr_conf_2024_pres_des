@@ -579,11 +579,9 @@ This site was designed to help teach the **key concepts** of discrete event simu
 
 [{{< fa globe>}} &nbsp; Click here to visit!](https://hsma-programme.github.io/Teaching_DES_Concepts_Streamlit)
 
-<br/><br/>
+<br/>
 
-Note that this won't work on Firefox.
-
-It uses browser-based Python, so calculations can be slow on mobile devices!
+It uses browser-based Python, so calculations can be slow on mobile devices and won't work on Firefox!
 
 
 :::
@@ -691,7 +689,9 @@ The DES lectures and activities from this year's HSMA can be found on our websit
 ### Intro to DES
 
 • What DES is and where it may be useful
+
 • The key terminology associated with DES e.g. resources, entities, sinks
+
 • How to simplify a real-world pathway modelling problem into a conceptual model
 
 :::
@@ -707,8 +707,11 @@ The DES lectures and activities from this year's HSMA can be found on our websit
 ### SimPy for DES
 
 • The features of the SimPy package
+
 • How to write simple simulations with SimPy
+
 • Multi-step pathways
+
 • Branching pathways and optional steps
 
 :::
@@ -722,11 +725,17 @@ The DES lectures and activities from this year's HSMA can be found on our websit
 ### Advanced Simpy
 
 • Warm-up Periods
+
 • Priority-based Queuing
+
 • Resource Unavailability
+
 • Lognormal Distributions
+
 • Reneging
+
 • Balking
+
 • Jockeying
 
 :::
@@ -752,8 +761,11 @@ We have also put together a **free eBook** that serves as a handy reference to d
 It's packed with code snippets you can use and modify and goes beyond the lecture content, including
 
 • appointment-based models
+
 • reproducibility
+
 • parallelisation
+
 • and more!
 
 :::
