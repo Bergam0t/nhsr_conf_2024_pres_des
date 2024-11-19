@@ -6,6 +6,7 @@ author:
 format:
   revealjs:
     output-file: index.html
+    embed-resources: true
     view-distance: 100
     height: 800
     width: 1250
@@ -242,7 +243,7 @@ Making changes to pathways can be
 And even if you do fix the original problem you were trying to solve, there's a risk of knock-on effects elsewhere in the pathway that you didn't foresee.
 :::
 
-## The Future Problems with Pathways
+## The *Future* Problems with Pathways
 
 And even if you avoid that....
 
@@ -354,14 +355,37 @@ We can make any change we want<br/>*(e.g. more resources, higher demand, new pat
 ```
 And so on!
 
+## Variation
+
+That randomness and variation in our healthcare systems that we mentioned before? DES can cope really well with that!
+
+::::{.columns}
+
+:::{.column width=40%}
+
+Let's imagine that people turn up to our system, on average, every 10 minutes.
+
+However, sometimes no-one turns up for half an hour, and other times 3 people turn up simultaneously.
+
+By using **distributions** we can produce random times that mimic real-world patterns.
+
+:::
+
+:::{.column width=60%}
+
+![](assets/2024-11-19-17-04-14.png)
+
+:::
+
+::::
+
 ## Randomness
 
-That randomness in our healthcare systems that we mentioned before? DES can cope really well with that!
+Taking it even further, we can harness that variation for making the most of our models.
 
 ```{=html}
 <br/>
 ```
-
 
 :::: {.columns  .fragment}
 
@@ -421,9 +445,24 @@ This allows us to test our system in multiple parallel universes, running it **t
 
 ## Exploring Impacts
 
+::::{.columns}
+
+:::{.column width=30%}
+
 In our models, we can then summarise the performance of a given set of parameters across multiple runs.
 
-![](assets/2024-11-18-18-52-06.png){fig-alt="A bar chart is shown that has 'Resource Utilisation (%)' on the vertical axis and 'Examination (Nurses)' and 'Treatment (Doctors)' on the horizontal axis. The 85 to 100% section is shown as red, 65 to 85% is shown as green, 40 to 65% is shown as amber, and 0 to 40% is again red. The examination (nurses) bar is at 100%, placing it in the red section for over-utilisation. The Treatment (Doctors) bar is at approximately 75%, placing it in the green section. A label shows at a quick glance that 1 of 2 utilisation metrics are in the ideal range in this simulation run."}
+:::
+
+:::{.column width=10%}
+
+:::
+
+:::{.column width=60%}
+![](assets/2024-11-18-18-52-06.png){width=600px fig-alt="A bar chart is shown that has 'Resource Utilisation (%)' on the vertical axis and 'Examination (Nurses)' and 'Treatment (Doctors)' on the horizontal axis. The 85 to 100% section is shown as red, 65 to 85% is shown as green, 40 to 65% is shown as amber, and 0 to 40% is again red. The examination (nurses) bar is at 100%, placing it in the red section for over-utilisation. The Treatment (Doctors) bar is at approximately 75%, placing it in the green section. A label shows at a quick glance that 1 of 2 utilisation metrics are in the ideal range in this simulation run."}
+
+:::
+
+::::
 
 ## Digging Into Results
 
@@ -569,13 +608,13 @@ This site was designed to help teach the **key concepts** of discrete event simu
 
 ::::{.columns}
 
-:::{.column width="80%"}
+:::{.column width="70%"}
 
 ![](assets/chrome_2RNEIsSXoP.gif){fig-alt="An animation showing a web interface for a discrete event simulation model. An animated representation of people moving through a two-step examination and treatment pathway is displayed, with queues at those different stages shown. The user thn moves to a series of simple bar charts showing metrics, and a series of more advanced box plots to show variation across multiple runs of the simulation."}
 
 :::
 
-:::{.column width="20%"}
+:::{.column width="30%"}
 
 [{{< fa globe>}} &nbsp; Click here to visit!](https://hsma-programme.github.io/Teaching_DES_Concepts_Streamlit)
 
@@ -596,7 +635,7 @@ There are various paid, closed-source drag-and-drop software tools for doing DES
 
 If you don't code, there is the free and open source (FOSS) tool [JaamSim](https://jaamsim.com/).
 
-![](assets/2024-11-18-10-15-22.png){fig-alt="A screenshot showing the homepage of the website for the JaamSim software. It contains a link to download the software for free, as well as a video showing the use of the software and some key information about the features of the software".}
+![](assets/2024-11-18-10-15-22.png){fig-alt="A screenshot showing the homepage of the website for the JaamSim software. It contains a link to download the software for free, as well as a video showing the use of the software and some key information about the features of the software."}
 
 
 ## DES in R
@@ -937,6 +976,12 @@ fig.show()
 
 ![](assets/firefox_WQjMAS0YvL.gif){fig-alt="An animation showing the movement of people through an emergency department or walk-in clinic. Queues build up in named sections of the animation, and the number of available resources at each step are indicated, with thhe individual people icons moving to a resource to show they are making use of it. Resources relate to steps including triage rooms, stabilisation bays, treatment cubicles, registration cubicles, examination bays and treatment cubicles. Time passes in the animation, showing how queues may ebb and flow at different times of day and where unacceptable queues may build up."}
 
+## 'Resourceless' queues in vidigi
+
+It is flexible for simulations that use both traditional simpy resources, or steps can just be represented as 'queues'.
+
+![](assets/firefox_w2SqxbI1UI.gif){fig-alt="A series of people moving between stages of a pathway. There are 8 clinicians represented, with steps including 'booked for appointment', 'attending appointment', and 'on books - awaiting next appointment', 'waiting to be scheduled' and 'referred out - unsuitable for service'"}
+
 ## Simulation Library
 
 :::{.callout-warning appearance="minimal"}
@@ -956,20 +1001,19 @@ At present, there is
 
 [{{< fa globe>}} &nbsp; Click here to try them out](https://simpy-visualisation.streamlit.app/)
 
-
 ## Model Reproducibility
 
 ![](resources/stars.png){fig-alt="A five-pointed logo comprised of arrows relating to the STARS initiative. The image includes details of what STARS stands for in this context: Sharing Tools and Artefacts for Reproducible Simulations in healthcare"}
 
 Reproducibility and reusability of models is crucial.
 
-I want to take a moment to highlight [STARS](https://github.com/pythonhealthdatascience)
+I want to take a moment to highlight [STARS](https://github.com/pythonhealthdatascience).
 
 This is a [UKRI-funded project](https://gtr.ukri.org/projects?ref=MR%2FZ503915%2F1) that is trying to ensure good reproducibility of healthcare simulation models.
 
-They are also creating examples in Python and R, as well as creating open-source versions of closed-source models from published scientific papers.
+They are also creating best-practice examples in Python and R and reproducing models from published scientific papers.
 
-## The STARS Framework {.smaller}
+## The STARS Framework
 
 ```{=html}
 <br/>
@@ -984,7 +1028,7 @@ They are also creating examples in Python and R, as well as creating open-source
 - Dependency management
 - Model created using free and open-source software (FOSS)
 - Minimum documentation
-- Research artefact meta data (ORCID ID + citation information)
+- Research artefact meta data (ORCID ID + citation info)
 - Remote code repository
 - Open science archive
 :::
