@@ -230,7 +230,7 @@ Sammi Rosser
 <div class="columns">
 <div class="column" style="width:35%;">
 <p><img data-src="resources/hsma_logo.png" alt="A red logo of a computer monitor and horizontal computer tower underneath it, encased in a circle. Underneath the logo is the acronym 'HSMA' in bold white lettering. Beneath this is the phrase 'Find the Future in You'"></p>
-<p><img data-src="resources/nihr_logo.png"></p>
+<p><img data-src="resources/nihr_logo.png" alt="A white and orange logo saying 'NIHR - Applied Research Collaboration South West Peninsula'"></p>
 </div><div class="column" style="width:5%;">
 
 </div><div class="column" style="width:60%;">
@@ -249,7 +249,7 @@ Sammi Rosser
 <h2>Pathway Simulation: Why?</h2>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="resources/long_hospital_queue.jpeg" height="400"></p>
+<p><img data-src="resources/long_hospital_queue.jpeg" alt="A stylised image showing very long queues outside of a hospital building" height="400"></p>
 </div><div class="column" style="width:60%;">
 <p>Your emergency department is struggling.</p>
 <p>You could try a range of different things…</p>
@@ -324,7 +324,7 @@ Sammi Rosser
 </div><div class="column" style="width:7%;">
 
 </div><div class="column" style="width:70%;">
-<p><img data-src="assets/2024-11-18-10-12-15.png"></p>
+<p><img data-src="assets/2024-11-18-10-12-15.png" alt="A pathway showing several steps, starting with 'sign in with receptionist'. One person is signing in; one receptionist is in use and the other is available. A queue of 7 people is then waiting to be triaged. One person is being triaged bby the single available triage nurse. The pathway then splits; one person is seeing a nurse for treatment while two further nurses are available. There is no queue for this step. However, 8 people are waiting to be treated by the single available doctor, who is currently treating someone. People can then either be discharged, receive additional treatment from a nurse or doctor, or may require additional tests. One person is waiting for tests; one person is dealing with the tests while the other is idle. After these tests, people may be discharged, or may need to see a doctor or nurse again."></p>
 </div></div>
 </section>
 <section id="queue-what" class="slide level2">
@@ -401,7 +401,7 @@ Sammi Rosser
 <div class="center">
 <p>In a DES…</p>
 </div>
-<p><img data-src="assets/2024-11-18-09-41-27.png"></p>
+<p><img data-src="assets/2024-11-18-09-41-27.png" alt="The top row of this diagram says 'entities' and shows stylised 'emoji' representations of 5 ill people. The next row of the diagram says 'flow through a pathway' and shows a branching diagram of a healthcare pathway with the steps 'arrive', 'sign in with receptionist', 'triaged', 'see nurse', 'see doctor', 'additional tests', 'discharge'. Some steps are optional or may be repeated more than once - the specifics are not important as it is just an indication of what is meant by 'pathway' in this context. The final row says 'using resources along the way' and shows four doctors and three beds as an indication of what resources are in these context."></p>
 </div></div>
 </section>
 <section id="des-to-the-rescue" class="slide level2">
@@ -441,17 +441,17 @@ Sammi Rosser
 <h2>Exploring Impacts</h2>
 <p>In our models, we can then summarise the performance of a given set of parameters across multiple runs.</p>
 
-<img data-src="assets/2024-11-18-18-52-06.png" class="r-stretch"></section>
+<img data-src="assets/2024-11-18-18-52-06.png" alt="A bar chart is shown that has 'Resource Utilisation (%)' on the vertical axis and 'Examination (Nurses)' and 'Treatment (Doctors)' on the horizontal axis. The 85 to 100% section is shown as red, 65 to 85% is shown as green, 40 to 65% is shown as amber, and 0 to 40% is again red. The examination (nurses) bar is at 100%, placing it in the red section for over-utilisation. The Treatment (Doctors) bar is at approximately 75%, placing it in the green section. A label shows at a quick glance that 1 of 2 utilisation metrics are in the ideal range in this simulation run." class="r-stretch"></section>
 <section id="digging-into-results" class="slide level2">
 <h2>Digging Into Results</h2>
 <p>We can start to explore the variation in performance across runs too.</p>
 
-<img data-src="assets/2024-11-18-18-52-30.png" class="r-stretch"></section>
+<img data-src="assets/2024-11-18-18-52-30.png" alt="A box plot showing the utilisation of treatment (doctor) and examination (nurse) resources across multiple simulation runs. The horizontal axis shows the average % utilisation, from 0% to 100%. The 85 to 100% section is shown as red, 65 to 85% is shown as green, 40 to 65% is shown as amber, and 0 to 40% is again red. The box plot shows the average and spread of model runs, with all 15 model runs showing a doctor utilisation of between 65% and 80%, with the average around 75%, so all runs show average doctor utilisation in an acceptable range. However, you cannot see the variation for nurses, as all runs appear to be around 100%, strongly suggesting there is never enough nurse resource even on 'quiet' days in the model." class="r-stretch"></section>
 <section id="comparing-performance" class="slide level2">
 <h2>Comparing Performance</h2>
 <p>And we can provide visualiations to compare the impact of changing parameters - here, for example, adding one extra stabilisation bay.</p>
 
-<img data-src="assets/2024-11-18-18-54-56.png" class="r-stretch"></section>
+<img data-src="assets/2024-11-18-18-54-56.png" alt="Two bar charts side-by-side indicating 'Utilisation' and 'Waits'. The horizontal axis for utilisation shows 0 to 100%. The 85 to 100% section is shown as red, 65 to 85% is shown as green, 40 to 65% is shown as amber, and 0 to 40% is again red. Treatment bays (trauma) and stabilisation bays are both in the red section, while treatment bays (non-trauma) are in the green section. Staggered bars show the average utilisation across two different scenarios. The second scenario shows slightly lower utilisation of both, but not enough to be in the green. The second graph shows 'waits' in minutes, with waits of below 120 minutes being green. Scenario 1 shows waits for stabilisation averaging over 300 minutes. Scenario 2 shows the waits decreasing to around 150 minutes on average. Waits for trauma treatment drop from 130 in scenario 1 to 50 in scenario 2." class="r-stretch"></section>
 <section id="a-note-about-modelling" class="slide level2">
 <h2>A Note About Modelling</h2>
 <p>Your DES won’t be a perfect one-to-one reproduction of the pathway you are modelling.</p>
@@ -467,7 +467,7 @@ Sammi Rosser
 </div><div class="column" style="width:10%;">
 
 </div><div class="column" style="width:45%;">
-<p><img data-src="assets/box_pixel.jpeg" height="450"></p>
+<p><img data-src="assets/box_pixel.jpeg" alt="A stylised colour illustration of an older man - intended to resemble the statistician George E P Box - sitting at a desk. The man has large round glasses, a large grey pointed moustache and grey hair. He is wearing a brown suit and waistcoat with a blue patterned tie. On the wall behind him are books, and on the table is a calculator, books and a clipboard. There are also graphs and charts on the wall and on a computer monitor on the desk." height="450"></p>
 </div></div>
 </section></section>
 <section>
@@ -537,7 +537,7 @@ Sammi Rosser
 <h2>Other Projects</h2>
 <p>You can find details about all of our previous and current Discrete Event Simulation projects <a href="https://hsma-programme.github.io/hsma_site/previous_projects/projects_by_methods.html#discrete-event-simulation"><i class="fa-solid fa-globe" aria-label="globe"></i> on the HSMA website</a></p>
 
-<img data-src="assets/cfN8dkSYNB.gif" class="r-stretch"></section></section>
+<img data-src="assets/cfN8dkSYNB.gif" alt="An animation of someone navigating through a page of projects on the HSMA website. They scroll down to a project on simulation and click on 'details' to receive more information and find a video on the project." class="r-stretch"></section></section>
 <section>
 <section id="doing-your-own-des-projects" class="title-slide slide level1 center">
 <h1>Doing your Own DES Projects</h1>
@@ -548,7 +548,7 @@ Sammi Rosser
 <p>This site was designed to help teach the <strong>key concepts</strong> of discrete event simulation to non-technical beginners.</p>
 <div class="columns">
 <div class="column" style="width:80%;">
-<p><img data-src="assets/chrome_2RNEIsSXoP.gif"></p>
+<p><img data-src="assets/chrome_2RNEIsSXoP.gif" alt="An animation showing a web interface for a discrete event simulation model. An animated representation of people moving through a two-step examination and treatment pathway is displayed, with queues at those different stages shown. The user thn moves to a series of simple bar charts showing metrics, and a series of more advanced box plots to show variation across multiple runs of the simulation."></p>
 </div><div class="column" style="width:20%;">
 <p><a href="https://hsma-programme.github.io/Teaching_DES_Concepts_Streamlit"><i class="fa-solid fa-globe" aria-label="globe"></i> &nbsp; Click here to visit!</a></p>
 <p><br></p>
@@ -559,13 +559,13 @@ Sammi Rosser
 <h2>Drag &amp; Drop</h2>
 <p>There are various paid, closed-source drag-and-drop software tools for doing DES (but we won’t talk about them here).</p>
 <p>If you don’t code, there is the free and open source (FOSS) tool <a href="https://jaamsim.com/">JaamSim</a>.</p>
-
-<img data-src="assets/2024-11-18-10-15-22.png" class="r-stretch"></section>
+<p><img data-src="assets/2024-11-18-10-15-22.png">{fig-alt=“A screenshot showing the homepage of the website for the JaamSim software. It contains a link to download the software for free, as well as a video showing the use of the software and some key information about the features of the software”.}</p>
+</section>
 <section id="des-in-r" class="slide level2">
 <h2>DES in R</h2>
 <div class="columns">
 <div class="column" style="width:60%;">
-<p><img data-src="resources/simmer-hex-01.svg" height="500"></p>
+<p><img data-src="resources/simmer-hex-01.svg" alt="The logo for the simmer R package. It is a yellow hexagon with a darker yellow border, with the word 'simmer' at the bottom and a simple black mug containing a spoon and three white dots." height="500"></p>
 </div><div class="column" style="width:40%;">
 <p><br><br></p>
 <p>R has the <a href="https://r-simmer.org/">simmer</a> package.</p>
@@ -576,19 +576,19 @@ Sammi Rosser
 <p>In Python, there are a range of packages for DES.</p>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="assets/2024-11-18-10-19-04.png"></p>
+<p><img data-src="assets/2024-11-18-10-19-04.png" alt="The logo for the Salabim simulation package. It is the text 'salabim' in a curly, stylised red font. In smaller text below this, it says 'discete event simulation'."></p>
 </div><div class="column" style="width:60%;">
 <p><a href="https://github.com/salabim/salabim">Salabim</a> is quite popular.</p>
 </div></div>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="assets/2024-11-18-10-16-14.png"></p>
+<p><img data-src="assets/2024-11-18-10-16-14.png" alt="The logo for the ciw package. It says 'Ciw' in simple white font on a yellow background, and below it has a white circle. To the left of the circle is a rectangle missing the leftmost edge, and several smaller complete rectangles within it at the rightmost end."></p>
 </div><div class="column" style="width:60%;">
 <p>I’ve also heard good things about <a href="https://github.com/CiwPython/Ciw">ciw</a></p>
 </div></div>
 <div class="columns">
 <div class="column" style="width:40%;">
-<p><img data-src="assets/2024-11-18-10-17-01.png"></p>
+<p><img data-src="assets/2024-11-18-10-17-01.png" alt="The logo for the simpy package. It is the text 'SimPy' in green and grey, with the top of the S stylised as the head of a snake and the bottom as a cog."></p>
 </div><div class="column" style="width:60%;">
 <p>But HSMA has used and taught <a href="https://simpy.readthedocs.io/en/latest/">simpy</a> for several years. It’s mature, stable, reliable and flexible.</p>
 </div></div>
@@ -628,7 +628,7 @@ Sammi Rosser
 <h2>The Little Book of DES</h2>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img data-src="resources/des_cover_image.jpeg"></p>
+<p><img data-src="resources/des_cover_image.jpeg" alt="An illustration of a woman with brown hair sitting at a desk and working on a computer with a globe on the screen. In the background is a futuristic scene showing a modern cityscape and the curvature of the earth, as though she is on a space station."></p>
 <p><a href="https://hsma-programme.github.io/hsma6_des_book/"><i class="fa-solid fa-globe" aria-label="globe"></i> &nbsp; Click here to view the eBook</a></p>
 </div><div class="column" style="width:50%;">
 <p>We have also put together a <strong>free eBook</strong> that serves as a handy reference to doing DES with SimPy.</p>
@@ -675,7 +675,7 @@ Sammi Rosser
 <li>add icons for resources and entities</li>
 </ul>
 <p>It’s hosted on PyPI - so you can <code>pip install</code> it!</p>
-<div id="412576ac" class="cell" data-execution_count="2">
+<div id="a8a75c3c" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="" aria-hidden="true" tabindex="-1"></a>pip install vidigi</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
